@@ -1,6 +1,7 @@
 use core::fmt;
 use std::error::Error as CoreError;
 
+// Custom error type
 #[derive(Debug)]
 pub struct RurlError(String);
 
@@ -11,12 +12,14 @@ impl RurlError {
         Self(s)
     }
 }
+
 impl fmt::Display for RurlError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "Rurl raised an error: {}", self.0)
     }
 }
 
+// Pass errors raised by program into our custom error stored as a string
 impl From<std::io::Error> for RurlError {
     fn from(value: std::io::Error) -> Self {
         Self(value.to_string())
@@ -40,30 +43,3 @@ impl From<reqwest::header::ToStrError> for RurlError {
         Self(value.to_string())
     }
 }
-
-// A nasty but beautiful implementation that uses memory leaks!!!
-// impl CoreError for RurlError {
-//     fn source(&self) -> Option<&(dyn CoreError + 'static)> {}
-// }
-//
-// #[derive(Debug)]
-// pub enum Error {
-//     Generic(&'static dyn CoreError),
-// }
-// impl fmt::Display for Error {
-//     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-//         match self {
-//             // Self::Generic(v) => write!(f, "Generic error::{}", v),
-//         }
-//     }
-// }
-//
-// impl<T> From<T> for Error
-// where
-//     T: std::error::Error,
-//     T: 'static,
-// {
-//     fn from(value: T) -> Self {
-//         Self::Generic(Box::leak(Box::new(value)))
-//     }
-// }
