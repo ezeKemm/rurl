@@ -4,17 +4,18 @@
 ██╔═══██║██║   ██║██╔═══██║██║
 ███████╔╝██║   ██║███████╔╝██║
 ██╔═══██╗██║   ██║██    ██╗██║
-██║   ██║╚██████╔╝██    ██║███████╗
-╚═╝   ╚═╝ ╚═════╝ ╚═    ╚═╝╚══════╝
+     ██║   ██║╚██████╔╝██    ██║███████╗
+     ╚═╝   ╚═╝ ╚═════╝ ╚═    ╚═╝╚══════╝
 -----------------------------------
 http request cli tool in rust
 
 </pre>
 <!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
 </div>
+
 # rurl
 
-Rurl is like curl, but without all the complexity, usage features ... and sparkle. A barebones CLI tool for sending HTTP requests and receiving responses via JSON files. A handy, compact tool for testing or other purposes.
+rurl is like curl, but without all the complexity, usage features ... and sparkle. A barebones CLI tool for sending HTTP requests and receiving responses via JSON files. A handy, compact tool for testing or other purposes.
 
 ## Features
 
