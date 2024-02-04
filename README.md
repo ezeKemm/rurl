@@ -7,7 +7,7 @@
      ██║   ██║╚██████╔╝██    ██║███████╗
      ╚═╝   ╚═╝ ╚═════╝ ╚═    ╚═╝╚══════╝
      -----------------------------------
-http request cli tool in rust
+     http request cli tool in rust
 
 </pre>
 <!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
