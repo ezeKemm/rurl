@@ -19,7 +19,10 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let _ = exec(args);
+    let e = exec(args);
+    if let Err(err) = e {
+        println!("{}", err);
+    }
 }
 
 fn handle_error() {}

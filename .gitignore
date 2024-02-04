@@ -1,5 +1,7 @@
 /target
+/output
 /src/sender_hyper.rs
+/tests/output
 Cargo.lock
 .DS_Store
 

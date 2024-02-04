@@ -22,24 +22,35 @@ impl fmt::Display for RurlError {
 // Pass errors raised by program into our custom error stored as a string
 impl From<std::io::Error> for RurlError {
     fn from(value: std::io::Error) -> Self {
-        Self(value.to_string())
+        let s = format!("StdIoError: {}", value);
+        Self(s)
+    }
+}
+
+impl From<std::num::ParseIntError> for RurlError {
+    fn from(value: std::num::ParseIntError) -> Self {
+        let s = format!("ParseIntError: {}", value);
+        Self(s)
     }
 }
 
 impl From<serde_json::Error> for RurlError {
     fn from(value: serde_json::Error) -> Self {
-        Self(value.to_string())
+        let s = format!("SerdeError: {}", value);
+        Self(s)
     }
 }
 
 impl From<reqwest::Error> for RurlError {
     fn from(value: reqwest::Error) -> Self {
-        Self(value.to_string())
+        let s = format!("reqwestError: {}", value);
+        Self(s)
     }
 }
 
 impl From<reqwest::header::ToStrError> for RurlError {
     fn from(value: reqwest::header::ToStrError) -> Self {
-        Self(value.to_string())
+        let s = format!("reqwest::header::ToStrError: {}", value);
+        Self(s)
     }
 }
