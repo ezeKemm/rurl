@@ -86,3 +86,7 @@ Save the JSON config file and run rurl in the command line
 ## Options
 
 `-h --help` : Display help information about rurl
+
+## LICENSE
+
+Distributed under the MIT license. See `LICENSE` for more information.
