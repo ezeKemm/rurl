@@ -1,7 +1,7 @@
-use std::error::Error;
+// use std::error::Error;
 use std::str::FromStr;
 
-use crate::error::RurlError;
+// use crate::error::RurlError;
 use crate::prelude::*;
 use crate::requests;
 
@@ -38,20 +38,8 @@ pub fn send_request(req: requests::Request) -> Result<Response> {
     request = request.json(&body); // Attach body as json
     println!("request: {:#?}", request);
 
-    // Build our Request struct to send
-    // let re = request.build()?;
     // Send request, return Response
     let res = request.send()?;
-    // println!("{:#?}", res);
-    // match res {
-    //     Ok(response) => Ok(response),
-    //     Err(e) => {
-    //         let i = e.source();
-    //         // panic!("{:#?} / {}", e, i.unwrap());
-    //         Err(RurlError::new(e.to_string()))
-    //     }
-    // }
-    // let res = client.execute(re)?;
     Ok(res)
 }
 
@@ -134,6 +122,7 @@ mod tests {
             assert_ne!(status_code, 200)
         }
     }
+
     #[test]
     // Returns error if url is malformed
     fn bad_url() {
