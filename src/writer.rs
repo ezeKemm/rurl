@@ -50,10 +50,10 @@ mod test {
     use super::build_file_path;
     #[test]
     fn path_name() {
-        let resp_path = build_file_path(Path::new("/tests/test2.json").to_path_buf()).unwrap();
+        let resp_path = build_file_path(Path::new("tests/test2.json").to_path_buf()).unwrap();
 
         // Redundant but useful check
-        assert!(Path::new("/tests/output").try_exists().unwrap());
-        assert_eq!(resp_path, Path::new("/tests/test2_response.json"));
+        assert!(Path::new("tests/output").try_exists().unwrap());
+        assert_eq!(resp_path, Path::new("tests/output/test2_response.json"));
     }
 }
